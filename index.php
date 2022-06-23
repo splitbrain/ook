@@ -1,8 +1,10 @@
 <?php
 include "brainfuck.php";
 include "util.php";
-$input  = $_REQUEST['input'];
-switch($_REQUEST['do']){
+$input  = isset($_REQUEST['input']) ? (string) $_REQUEST['input'] : '';
+$output = '';
+
+if(isset($_REQUEST['do'])) switch((string) $_REQUEST['do']){
     case 'Text to Ook!':
     case 'Text to short Ook!':
         $output = fuck_text($input);
@@ -52,7 +54,7 @@ switch($_REQUEST['do']){
 }
 
 ?>
-<html>
+<html lang="html">
 <head>
     <title>Brainfuck/Text/Ook! obfuscator - deobfuscator. Decode and encode online.</title>
 
