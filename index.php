@@ -44,7 +44,7 @@ if(isset($_REQUEST['do'])) switch((string) $_REQUEST['do']){
         $input = preg_replace('/[^\.?!]+/','',$input);
         $len = strlen($input);
         for($i=0;$i<$len;$i+=2){
-            $output .= $lookup[$input{$i}.$input{$i+1}];
+            $output .= $lookup[$input[$i].$input[$i+1]];
         }
         $output = brainfuck($output);
         break;
